@@ -1,0 +1,48 @@
+A. Login ke MySQL via CMD:
+1. masuk ke direktori tempat instalasi xampp
+2. cd xampp/mysql/bin
+3. xampp -u root
+4. Pastikan telah berhasil login ke mysql
+
+B. Create database pegawai
+1. CREATE DATABASE IF NOT EXISTS pegawai
+2. USE pegawai
+
+C. Create table pada database pegawai
+1. CREATE TABLE pegawai(
+id_pegawai int(5) NOT NULL AUTO_INCREMENT,
+nama_pegawai varchar(30) NOT NULL,jenis_kelamin ENUM('L','P') NOT NULL,
+tgl_lahir date,foto varchar(50),
+keterangan varchar(100),
+id_jabatan int(5),
+PRIMARY KEY (id_pegawai));
+2. CREATE TABLE jabatan (
+id_jabatan int(5) NOT NULL AUTO_INCREMENT,
+nama_jabatan varchar(20),
+PRIMARY KEY (id_jabatan));
+3. CREATE TABLE user(
+id_user int(5) NOT NULL AUTO_INCREMENT,
+nama_lengkap varchar(50),
+username varchar(20),
+password varchar(50),
+PRIMARY KEY (id_user));
+4. INSERT INTO user VALUES (NULL,'Edi Saputra','admin',MD5('admin'));
+
+Kode PHP:
+a. download file jquery-3.6.0.min.js dari https://jquery.com/download/
+b. download file open-iconic-bootstrap.min.css dari useiconic.com/open
+c. download plugin DataTable dari www.datatables.net. Buat folder plugin dan pidahkan folder dist dari plugin
+d. download plugin summernote dari summernote.org simpan di dalam folder plugin
+DataTable ke folder plugin tersebut.Rename folder dist menjadi DataTables.
+1. Buat file config.php simpan di folder library
+2. Buat file login.php
+3. Buat file logout.php
+4. Buat file ceklogin.php
+5. Buat file index.php (catatan: isi menu button masih belum tampil)
+6. Buat file konten.php
+7. Buat file dashbord.php
+8. Buat file jabatan.php , edit file index.php untuk menambahkan plugin DataTable dengan menambahkan tag <link> pada head dan tag <script> pada body
+9. BUat file pegawai.php
+10. Buat file pegawai_tambah.php, edit file index.php untuk menambahkan plugin bootstrap-datepicker dan summernote dengan menambahkan tag <link> pada head dan tag <script> pada body
+11. BUat file pegawai_insert.php, buat folder img di dalam folder project website
+12. BUat file ....
