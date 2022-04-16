@@ -4,11 +4,14 @@ ob_start();
 
 include "library/config.php";
 
-if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
+if (empty($_SESSION['username']) or empty($_SESSION['password']) or empty($_SESSION['role'])) {
     echo "<p align='center'> Anda harus login terlebih dahulu!</p>";
     echo "<meta http-equiv='refresh' content='0;url=login.php'>";
 } else{
     define('INDEX',true);
+    if ($_SESSION['role']=="admin") define('ADMIN',true);
+    if ($_SESSION['role']=="user") define('USER',true);
+
 
 //Indonesian Time
 $date = new DateTime("",new DateTimeZone('Asia/Jakarta'));

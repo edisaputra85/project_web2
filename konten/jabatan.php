@@ -1,5 +1,9 @@
-<?php
-if (!defined('INDEX')) die("");
+<?php 
+if (!defined('INDEX') || !defined('ADMIN')) {
+    echo"<div class='alert alert-danger alert-dismissible fade show' role='alert'><strong>Anda tidak memiliki akses ke menu ini</storng></div>";
+    echo "<Meta http-equiv='refresh' content='2;url=?hal=dashboard'>"; 
+}
+else{
 ?>
 
 <h4 class="mt-2">Data Jabatan</h4>
@@ -35,3 +39,6 @@ if (!defined('INDEX')) die("");
         </tbody>
     </table>
 </div>
+<?php
+}
+?>
